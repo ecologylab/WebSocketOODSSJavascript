@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01//EN" "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<!-- If Google's chrome frame installed, use it! -->
+		<!-- Comment needs to be BELOW this meta tag! -->
+		<meta http-equiv="Content-Language" content="en">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>Quiz Game</title>
+		<script src="../res/js/jWebSocket.js" type="text/javascript"></script>
+		<script src="jquery-1.2.6.min.js" type="text/javascript"></script>
+		<script src="oodss.js" type="text/javascript"></script>
+		<script type="text/javascript" language="JavaScript">
+		
+		var player_name;
+		var player_score = 0;
+		
+		var lWSC = null;
+		
+		function initPage()
+		{
+		   lWSC = new jws.jWebSocketJSONClient();
+		//meh
+		   var k = 0;
+		   $("#player_name_input").click(
+		   function()
+		   {
+		      $("#player_name_input").val("");
+		   });
+		   $("#player_name_input").keypress(function(e) {
+    			if(e.keyCode == 13) {
+    				player_name = $("#player_name_input").val();
+			     	$("#player_name").html(player_name);
+			     	
+					var joinGameRequest = new join_game_request(0,"Rhema")
+					sendRequest(joinGameRequest);
+				}
+			});
+			
+			
+			doOpen();
+		}
+		
+		function exitPage()
+		{
+		   var k = 0;
+		   //disconnect from client et cetera....
+		}
+
+		</script>
+	</head>
+
+	<body
+		onload="initPage();"
+		onunload="exitPage();"
+		>
+		
+		<h1>Quiz Game</h1>
+		<div id="player_info">
+		    <div id="player_name">
+				<input id="player_name_input" type="text" value="Enter your name to start"/>
+			</div>
+			<div id="player_score">
+			    Score: 0
+			</div>
+		</div>
+		<div id="players_side_tab">
+		    Players:
+		</div>
+		<div id="inner_page_center">
+		    Enter your name above to start....
+		</div>
+		<div id="saybox">
+		  Say:<input type="text"/>
+		</div>
+		<div id="log">
+		</div>
+	</body>
+</html>
