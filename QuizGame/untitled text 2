@@ -1,0 +1,23 @@
+Player
+ name
+ strength
+ speed
+ skin
+  Human
+    rank
+    level
+  Computer
+    difficulty
+    type
+    ai
+Movements
+ Move moves
+  x
+  y
+  sneaking
+  defending
+  
+
+
+
+Each thing should have its own class

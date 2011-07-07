@@ -1,0 +1,27 @@
+//Player
+var player_json = {"player":{"name":"Bob", "strength":"4", "speed":"3", "skin":"2"}};
+function player(json,name,strength,speed,skin)
+{
+   //tbd childFieldTypes map needed for construction non-scalars
+   if(json)
+   {
+     for(field in json)
+     {
+        this[field] = json[field];
+     }
+    //tbd check for more complex type and call it's constuctor with its dict.
+    //graph serialization
+      return;
+    }
+}
+Human
+{"human":{"name":"Sam", "strength":"33", "speed":"44", "skin":"2", "rank":"3", "level":"4", "cash":"4.6"}}
+Computer
+{"computer":{"name":"Jarvis", "strength":"30", "speed":"33", "skin":"6", "difficulty":"8.5", "type":"monster", "ai":"sneaky"}}
+Move
+{"move":{"x":"4.0", "y":"4.0", "sneaking":"true", "move_time":"4.0"}}
+Movements
+{"movements":{"time":"5.0", "moves":{"moves":[{"sneaking":"true", "move_time":"4.0"},{"x":"4.0", "y":"3.0", "sneaking":"true", "move_time":"4.0"},{"x":"8.0", "y":"6.0", "sneaking":"true", "move_time":"4.0"},{"x":"12.0", "y":"9.0", "sneaking":"true", "move_time":"4.0"},{"x":"16.0", "y":"12.0", "sneaking":"true", "move_time":"4.0"},{"x":"20.0", "y":"15.0", "sneaking":"true", "move_time":"4.0"},{"x":"24.0", "y":"18.0", "sneaking":"true", "move_time":"4.0"},{"x":"28.0", "y":"21.0", "sneaking":"true", "move_time":"4.0"},{"x":"32.0", "y":"24.0", "sneaking":"true", "move_time":"4.0"},{"x":"36.0", "y":"27.0", "sneaking":"true", "move_time":"4.0"}]}}}
+Item
+{"item":{"price":"25.0", "owner_name":"Rhema", "name":"pick"}}
+{"bank":{"item_map":{"items":[{"price":"25.0", "owner_name":"Rhema", "name":"pick"},{"price":"25.0", "owner_name":"Rhema", "name":"gold-pick"},{"price":"25.0", "owner_name":"Rhema", "name":"iron-pick"},{"price":"25.0", "owner_name":"George", "name":"door"}]}}}

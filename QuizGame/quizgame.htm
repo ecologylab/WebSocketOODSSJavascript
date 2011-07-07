@@ -10,6 +10,7 @@
 		<script src="../res/js/jWebSocket.js" type="text/javascript"></script>
 		<script src="jquery-1.2.6.min.js" type="text/javascript"></script>
 		<script src="oodss.js" type="text/javascript"></script>
+		<script src="sandy.js" type="text/javascript"></script>
 		<script type="text/javascript" language="JavaScript">
 		
 		var player_name;
@@ -32,7 +33,7 @@
     				player_name = $("#player_name_input").val();
 			     	$("#player_name").html(player_name);
 			     	
-					var joinGameRequest = new join_game_request(0,"Rhema")
+					var joinGameRequest = new join_game_request(0,player_name)
 					sendRequest(joinGameRequest);
 				}
 			});

@@ -1069,10 +1069,10 @@ jws.oop.declareClass( "jws", "jWebSocketTokenClient", jws.jWebSocketBaseClient, 
 				lResponseRequested = aOptions.responseRequested;
 			}
 		}
-		if( lRes.code == 0 ) {
+		//if( lRes.code == 0 ) {
 			this.sendToken2(aText);
-		}
-		return lRes;
+		//}
+		return 0;//lRes;
 	},
 
 	//:m:*:echo
