@@ -150,7 +150,7 @@ var movements_json = '{"movements":{"time":"5.0", "moves":{"moves":[{"sneaking":
 function movements(json,time,moves)
 {
    this._simpl_object_name = "movements";
-   this._simpl_non_scalar_types = {"movements"};
+   this._simpl_non_scalar_types = {"movements":"move"};
    if(json)
    {
      for(field in json)
@@ -166,9 +166,16 @@ function movements(json,time,moves)
             {
                var item = null;
                if(field in _simpl_non_scalar_types)
-                   item = simplDeserialize(this[field]);
+               {
+                   var simplItem = {};
+                   simplItem[_simpl_non_scalar_types] = this[field];
+                   alert(JSON.stringify(simplItem));
+                   item = simplDeserialize(simplItem);
+            	}
                 else
+                {
                    item = this[field];
+                }
             	collection.push(item);
             }
         }
